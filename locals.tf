@@ -117,6 +117,7 @@ locals {
     instance_refresh_instance_warmup         = null                                                 # The number of seconds until a newly launched instance is configured and ready to use. Defaults to the ASG's health check grace period.
     instance_refresh_triggers                = []                                                   # Set of additional property names that will trigger an Instance Refresh. A refresh will always be triggered by a change in any of launch_configuration, launch_template, or mixed_instances_policy.
     capacity_rebalance                       = false                                                # Enable capacity rebalance
+    device_index                             = 0
   }
 
   workers_group_defaults = merge(

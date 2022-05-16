@@ -328,6 +328,11 @@ resource "aws_launch_template" "workers_launch_template" {
         local.workers_group_defaults["additional_security_group_ids"],
       ),
     ])
+    device_index = lookup(
+      var.worker_groups_launch_template[count.index],
+      "device_index",
+      local.workers_group_defaults["device_index"],
+    )
   }
 
   iam_instance_profile {
